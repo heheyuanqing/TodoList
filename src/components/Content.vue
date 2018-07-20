@@ -7,6 +7,11 @@
         <li v-for="task in tasks" v-bind:class={finished:task.isFinished} v-on:click="finish(task)">{{task.content}}</li>
       </ul>
     </div>
+    <div v-bind:class={btn:true}>
+      <button>全部</button>
+      <button>已完成</button>
+      <button>未完成</button>
+    </div>
   </div>
 </template>
 <script>
@@ -45,4 +50,7 @@ ul{
 .finished{
   text-decoration: line-through;
 }
+  .btn{
+    margin-top: 40px;
+  }
 </style>
