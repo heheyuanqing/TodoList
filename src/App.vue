@@ -1,28 +1,28 @@
 <template>
   <div id="app">
- <Title/>
-    <Input/>
+    <Title/>
+    <Content/>
   </div>
 </template>
 
 <script>
 
-import Title from "./components/Title";
-import Input from "./components/Input";
+import Title from "./components/Title"
+import Content from "./components/Content"
 
 export default {
   name: 'App',
   components: {
-    Input,
+    Content,
     Title
   }
 }
 </script>
 
 <style>
-#app {
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
 </style>
