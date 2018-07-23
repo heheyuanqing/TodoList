@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Title/>
+    <Input/>
     <Content/>
   </div>
 </template>
@@ -9,10 +10,12 @@
 
 import Title from "./components/Title"
 import Content from "./components/Content"
+import Input from "./components/input";
 
 export default {
   name: 'App',
   components: {
+    Input,
     Content,
     Title
   }
