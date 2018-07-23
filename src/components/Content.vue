@@ -48,7 +48,9 @@
     width: 400px;
     margin: 50px auto 0 auto;
   }
-
+.finished{
+  text-decoration: line-through;
+}
   .btn {
     margin-top: 40px;
   }
