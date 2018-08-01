@@ -2,7 +2,7 @@
   <div>
     <div>
       <ul>
-        <li v-for="task in tasks" v-bind:class={finished:task.isFinished} v-on:click="finish(task)">{{task.content}}
+        <li v-for="task in tasks" v-bind:class={finished:task.isFinished} v-on:click="finish(task.content)">{{task.content}}
         </li>
       </ul>
     </div>
@@ -14,31 +14,24 @@
   </div>
 </template>
 <script>
-  import Bus from './bus';
+  // import Bus from './bus';
+  import store from '../store/store';
 
   export default {
     name: 'Content',
-    data() {
-      return {
-        tasks: [
-          {
-            content: "read books",
-            isFinished: false
-          }
-        ],
-        newTask: ''
+    computed: {
+      tasks() {
+        return store.state.tasks
       }
     },
-    created() {
-      Bus.$on('addTasks', (task) => {
-        this.tasks.push(task);
-      });
-    },
+
     methods: {
-      finish(task) {
-        task.isFinished = !task.isFinished;
+
+      finish(name) {
+        store.commit('deleteTask',name);
       }
-    }
+    },
+    store
   }
 </script>
 <style>
@@ -48,9 +41,11 @@
     width: 400px;
     margin: 50px auto 0 auto;
   }
-.finished{
-  text-decoration: line-through;
-}
+
+  .finished {
+    text-decoration: line-through;
+  }
+
   .btn {
     margin-top: 40px;
   }
