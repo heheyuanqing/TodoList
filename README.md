@@ -1,30 +1,21 @@
 # TO Do List
 
-> A Vue.js project
+> A Vue.js demo
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+#### 启动
+```
+npm install 
+npm run dev/npm start
 ```
 
+> vue + webpack 实现
+- 将输入及列表部分作为一个组件
 
+- 将输入部分与列表部分作为两个组件
+  * 通过Bus.js创建一个vue实例，进行子组件间的通信
+  
+*Vue组件间的通信见学习笔记https://www.jianshu.com/p/2019234187c*
+
+> vue + vuex + webpack
+ 
+ 通过$store.commit()触发mutation执行函数

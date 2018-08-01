@@ -17,7 +17,7 @@ import store from '../store/store';
     },
     methods:{
     addTask(){
-
+      console.log(this);
       store.commit('addTask',this.newTask);
       this.newTask="";
     }
